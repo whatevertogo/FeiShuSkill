@@ -69,19 +69,14 @@
 cp SKILL.md ~/.claude/skills/lark-mcp.md
 ```
 
-### 方式 3：Cursor / Other AI IDEs
-
-在 IDE 的配置或插件设置中添加：
-- Skills 目录路径
-- 或直接导入 `SKILL.md` 文件
-
-### 方式 4：Codex
-
-在 Codex 配置文件中添加 skill 引用：
-```yaml
-skills:
-  - path: /path/to/FeiShuSkill/SKILL.md
+### 方式 3：给Claude Code用
+```bash
+npm i -g openskills
 ```
+```bash
+openskills install whatevertogo/FeiShuSkill
+```
+
 
 ## 🚀 快速开始
 
