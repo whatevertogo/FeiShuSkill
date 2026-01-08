@@ -67,8 +67,8 @@ record_id - 记录ID
 ```yaml
 工具: mcp__lark-mcp__bitable_v1_appTableRecord_search
 path:
-  app_token: "your_app_token"
-  table_id: "your_table_id"
+  app_token: "your_app_token"  # 需要替换为实际的 Base 应用 ID（从 URL 获取）
+  table_id: "your_table_id"    # 需要替换为实际的表格 ID（从 URL 获取）
 params:
   page_size: 20
 data:
@@ -85,7 +85,7 @@ data:
 ```yaml
 工具: mcp__lark-mcp__im_v1_message_create
 data:
-  receive_id: "群组chat_id"
+  receive_id: "oc_xxxxx"  # 需要替换为实际的群组 chat_id
   msg_type: "text"
   content: '{"text": "消息内容"}'
 params:
@@ -168,7 +168,7 @@ https://xxx.feishu.cn/base/appxxxxx?table=tblxxxxx
 ```yaml
 工具: mcp__lark-mcp__contact_v3_user_batchGetId
 data:
-  emails: ["user@example.com"]
+  emails: ["user@example.com"]  # 需要替换为实际的用户邮箱
 params:
   user_id_type: "open_id"
 ```
@@ -194,7 +194,7 @@ params:
 ```yaml
 工具: mcp__lark-mcp__bitable_v1_app_create
 data:
-  name: "项目管理"
+  name: "项目管理"  # 可以修改为您需要的名称
   time_zone: "Asia/Shanghai"
 useUAT: true  # ⭐ 重要：使用用户身份，确保您可以直接访问
 ```
@@ -203,7 +203,7 @@ useUAT: true  # ⭐ 重要：使用用户身份，确保您可以直接访问
 ```yaml
 工具: mcp__lark-mcp__bitable_v1_appTable_create
 path:
-  app_token: "从步骤1获取"
+  app_token: "bascnxxxxxx"  # 需要替换为步骤1返回的实际 app_token
 data:
   table:
     name: "表格名称"
@@ -227,8 +227,8 @@ data:
 ```yaml
 工具: mcp__lark-mcp__bitable_v1_appTableRecord_create
 path:
-  app_token: "xxx"  # 步骤1获取
-  table_id: "xxx"   # 步骤2获取
+  app_token: "bascnxxxxxx"  # 需要替换为步骤1返回的实际值
+  table_id: "tblxxxxxx"     # 需要替换为步骤2返回的实际值
 data:
   fields:
     姓名: "张三"
@@ -240,8 +240,8 @@ data:
 ```yaml
 工具: mcp__lark-mcp__bitable_v1_appTableRecord_search
 path:
-  app_token: "xxx"
-  table_id: "xxx"
+  app_token: "bascnxxxxxx"  # 需要替换为实际的 app_token
+  table_id: "tblxxxxxx"     # 需要替换为实际的 table_id
 params:
   page_size: 10
 ```
@@ -260,8 +260,8 @@ params:
 ```yaml
 工具: mcp__lark-mcp__bitable_v1_appTableRecord_search
 path:
-  app_token: "xxx"
-  table_id: "tblxxx"
+  app_token: "bascnxxxxxx"  # 需要替换为实际的 app_token
+  table_id: "tblxxxxxx"     # 需要替换为实际的 table_id
 params:
   page_size: 10
 data:
@@ -302,7 +302,7 @@ for each item in items:
 ```yaml
 工具: mcp__lark-mcp__im_v1_message_create
 data:
-  receive_id: "chat_id"
+  receive_id: "oc_xxxxx"  # 需要替换为实际的群组 chat_id
   msg_type: "text"
   content: '{"text": "处理结果：..."}'
 params:
@@ -345,7 +345,7 @@ data:
 ```yaml
 工具: mcp__lark-mcp__docx_v1_document_rawContent
 path:
-  document_id: "从搜索结果获取"
+  document_id: "doxcnxxxxxx"  # 需要替换为步骤2获取的实际 document_id
 params:
   lang: 0
 useUAT: true
@@ -431,7 +431,7 @@ useUAT: false  # ❌ 租户身份 - 需要额外设置权限
 
 **解决方案：**
 ```yaml
-# 从 URL 获取正确的 ID
+# 从 URL 获取正确的 ID（appxxxxx 和 tblxxxxx 是需要替换的占位符）
 https://xxx.feishu.cn/base/appxxxxx?table=tblxxxxx
                          ↑app_token    ↑table_id
 

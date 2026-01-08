@@ -38,10 +38,10 @@ type: "docx"     # 实际文档
 ```yaml
 工具: mcp__lark-mcp__drive_v1_permissionMember_create
 path:
-  token: "doxcnxxxxxx"  # 文档 token
+  token: "doxcnxxxxxx"  # 需要替换为实际的文档 token
 data:
   member_type: "openid"
-  member_id: "ou_xxxxx"
+  member_id: "ou_xxxxx"  # 需要替换为实际的用户 open_id
   perm: "edit"
   perm_type: "container"
 params:
@@ -55,10 +55,10 @@ useUAT: true
 ```yaml
 工具: mcp__lark-mcp__drive_v1_permissionMember_create
 path:
-  token: "doxcnxxxxxx"
+  token: "doxcnxxxxxx"  # 需要替换为实际的文档 token
 data:
   member_type: "openchat"
-  member_id: "oc_xxxxx"  # 群组 chat_id
+  member_id: "oc_xxxxx"  # 需要替换为实际的群组 chat_id
   perm: "view"
   perm_type: "container"
 params:
@@ -342,10 +342,10 @@ data:
 # 步骤3: 添加群组权限
 工具: mcp__lark-mcp__drive_v1_permissionMember_create
 path:
-  token: "doxcnxxxxxx"
+  token: "doxcnxxxxxx"  # 需要替换为步骤2返回的实际 document_id
 data:
   member_type: "openchat"
-  member_id: "oc_xxxxx"
+  member_id: "oc_xxxxx"  # 需要替换为实际的群组 chat_id
   perm: "edit"
   perm_type: "container"
 params:
@@ -458,6 +458,8 @@ type: "wiki"
 | userid | user_12345 | 自定义用户 ID |
 | groupid | group_xxxxx | 用户组 ID |
 | wikispaceid | wikispace_xxxxx | Wiki 空间 ID |
+
+**注意：** 表格中形如 `ou_xxxxx`、`oc_xxxxx` 等是格式示例，实际使用时需要替换为真实的 ID 值。
 
 ## 高级技巧
 

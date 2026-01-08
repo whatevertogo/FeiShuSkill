@@ -5,8 +5,8 @@
 ### 1. 查询所有数据
 ```yaml
 path:
-  app_token: "bascnxxxxxx"
-  table_id: "tblxxxxxx"
+  app_token: "bascnxxxxxx"  # 需要替换为实际的 app_token
+  table_id: "tblxxxxxx"     # 需要替换为实际的 table_id
 params:
   page_size: 20
 ```

@@ -86,7 +86,7 @@ params:
 ```yaml
 工具: mcp__lark-mcp__im_v1_chatMembers_get
 path:
-  chat_id: "oc_xxxxx"
+  chat_id: "oc_xxxxx"  # 需要替换为实际的群组 chat_id
 params:
   page_size: 50
   member_id_type: "open_id"  # 或 "union_id", "user_id"
@@ -110,9 +110,9 @@ params:
 ```yaml
 工具: mcp__lark-mcp__im_v1_chat_create
 data:
-  name: "项目讨论组"
+  name: "项目讨论组"  # 可以修改为您需要的群组名称
   chat_type: "private"  # 或 "group"
-  user_id_list: ["ou_xxxxx", "ou_yyyyy"]
+  user_id_list: ["ou_xxxxx", "ou_yyyyy"]  # 需要替换为实际的用户 open_id 列表
 params:
   user_id_type: "open_id"
 ```
@@ -138,9 +138,9 @@ params:
 
 ```yaml
 data:
-  name: "项目组"
-  owner_id: "ou_xxxxx"  # 指定群主
-  user_id_list: ["ou_yyyyy", "ou_zzzzz"]
+  name: "项目组"  # 可以修改为您需要的群组名称
+  owner_id: "ou_xxxxx"  # 需要替换为实际的群主 open_id
+  user_id_list: ["ou_yyyyy", "ou_zzzzz"]  # 需要替换为实际的成员 open_id 列表
 params:
   user_id_type: "open_id"
 ```
@@ -328,9 +328,9 @@ params:
 # 步骤1: 创建群组
 工具: mcp__lark-mcp__im_v1_chat_create
 data:
-  name: "新项目组"
-  owner_id: "ou_xxxxx"  # ⭐ 指定用户为群主（重要）当前为占位符你需要替换成实际用户ID
-  user_id_list: ["ou_xxxxx", "ou_yyyyy"]
+  name: "新项目组"  # 可以修改为您需要的群组名称
+  owner_id: "ou_xxxxx"  # ⭐ 需要替换为实际的群主 open_id（重要）
+  user_id_list: ["ou_xxxxx", "ou_yyyyy"]  # 需要替换为实际的成员 open_id 列表
 params:
   user_id_type: "open_id"
 useUAT: true  # 使用用户身份
@@ -341,7 +341,7 @@ useUAT: true  # 使用用户身份
 # 步骤3: 发送欢迎消息
 工具: mcp__lark-mcp__im_v1_message_create
 data:
-  receive_id: "oc_xxxxx" 
+  receive_id: "oc_xxxxx"  # 需要替换为步骤2返回的实际 chat_id 
   msg_type: "post"
   content: '{
     "post": {

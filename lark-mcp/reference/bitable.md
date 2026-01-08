@@ -45,8 +45,8 @@ record_id  - 记录 ID（从查询结果获取）
 ```yaml
 工具: mcp__lark-mcp__bitable_v1_app_create
 data:
-  name: "项目管理"
-  folder_token: ""      # 留空=根目录
+  name: "项目管理"  # 可以修改为您需要的名称
+  folder_token: ""      # 留空=根目录，或填写实际的文件夹 token
   time_zone: "Asia/Shanghai"
 useUAT: true  # ⭐ 优先使用用户身份，创建者=您，可直接访问
              #      useUAT: false 时创建者=飞书助手，需要额外设置权限
@@ -66,7 +66,7 @@ useUAT: true  # ⭐ 优先使用用户身份，创建者=您，可直接访问
 ```yaml
 工具: mcp__lark-mcp__bitable_v1_appTable_create
 path:
-  app_token: "bascnxxxxxx"
+  app_token: "bascnxxxxxx"  # 需要替换为实际的 app_token
 data:
   table:
     name: "任务表"
@@ -187,8 +187,8 @@ data:
 ```yaml
 工具: mcp__lark-mcp__bitable_v1_appTableRecord_search
 path:
-  app_token: "bascnxxxxxx"
-  table_id: "tblxxxxxx"
+  app_token: "bascnxxxxxx"  # 需要替换为实际的 Base 应用 ID
+  table_id: "tblxxxxxx"     # 需要替换为实际的表格 ID
 params:
   page_size: 20
   user_id_type: "open_id"
@@ -338,8 +338,8 @@ params:
 ```yaml
 工具: mcp__lark-mcp__bitable_v1_appTableRecord_create
 path:
-  app_token: "bascnxxxxxx"
-  table_id: "tblxxxxxx"
+  app_token: "bascnxxxxxx"  # 需要替换为实际的 app_token
+  table_id: "tblxxxxxx"     # 需要替换为实际的 table_id
 data:
   fields:
     任务名称: "完成项目文档"
@@ -421,9 +421,9 @@ params:
 ```yaml
 工具: mcp__lark-mcp__bitable_v1_appTableRecord_update
 path:
-  app_token: "bascnxxxxxx"
-  table_id: "tblxxxxxx"
-  record_id: "recxxxxxx"  # 从查询结果获取
+  app_token: "bascnxxxxxx"  # 需要替换为实际的 app_token
+  table_id: "tblxxxxxx"     # 需要替换为实际的 table_id
+  record_id: "recxxxxxx"    # 需要替换为从查询结果获取的实际 record_id
 data:
   fields:
     状态: "已完成"
@@ -446,8 +446,8 @@ params:
 ```yaml
 工具: mcp__lark-mcp__bitable_v1_appTableField_list
 path:
-  app_token: "bascnxxxxxx"
-  table_id: "tblxxxxxx"
+  app_token: "bascnxxxxxx"  # 需要替换为实际的 app_token
+  table_id: "tblxxxxxx"     # 需要替换为实际的 table_id
 params:
   page_size: 100
 ```

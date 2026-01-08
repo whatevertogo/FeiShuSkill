@@ -49,7 +49,7 @@
           {"tag": "a", "text": "查看文档", "href": "https://example.com"}
         ],
         [
-          {"tag": "at", "user_id": "ou_xxxxx", "text": "@张三"}
+          {"tag": "at", "user_id": "ou_xxxxx", "text": "@张三"}  // user_id 需要替换为实际的 open_id
         ]
       ]
     }

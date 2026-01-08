@@ -55,7 +55,7 @@ data:
 data:
   search_key: "文档"
   count: 10
-  owner_ids: ["ou_xxxxx"]  # 指定文档所有者
+  owner_ids: ["ou_xxxxx"]  # 需要替换为实际的用户 open_id
 ```
 
 ### 按群组过滤
@@ -64,7 +64,7 @@ data:
 data:
   search_key: "文档"
   count: 10
-  chat_ids: ["oc_xxxxx"]  # 指定群组
+  chat_ids: ["oc_xxxxx"]  # 需要替换为实际的群组 chat_id
 ```
 
 ### 分页搜索
@@ -211,7 +211,7 @@ useUAT: true
 ```yaml
 工具: mcp__lark-mcp__docx_v1_document_rawContent
 path:
-  document_id: "doxcnxxxxxx"  # 从搜索结果获取
+  document_id: "doxcnxxxxxx"  # 需要替换为实际的文档 ID（从搜索结果获取）
 params:
   lang: 0  # 0: 中文名称, 1: 英文名称, 2: 日语名称
 useUAT: true
@@ -252,7 +252,7 @@ useUAT: true
 ```yaml
 工具: mcp__lark-mcp__docx_v1_document_rawContent
 path:
-  document_id: "doxcnxxxxxx"
+  document_id: "doxcnxxxxxx"  # 需要替换为步骤2获取的实际 document_id
 params:
   lang: 0
 useUAT: true
@@ -336,9 +336,9 @@ https://xxx.feishu.cn/docx/{document_id}
 # 发送到群组
 工具: mcp__lark-mcp__im_v1_message_create
 data:
-  receive_id: "oc_xxxxx"
+  receive_id: "oc_xxxxx"  # 需要替换为实际的群组 chat_id
   msg_type: "text"
-  content: '{"text": "会议纪要已创建：https://xxx.feishu.cn/docx/doxcnxxxxxx"}'
+  content: '{"text": "会议纪要已创建：https://xxx.feishu.cn/docx/doxcnxxxxxx"}'  # 其中 doxcnxxxxxx 需要替换为实际的 document_id
 params:
   receive_id_type: "chat_id"
 ```
@@ -490,7 +490,7 @@ while offset + count < 200:
 **从 URL 获取 document_id：**
 ```
 https://xxx.feishu.cn/docx/doxcnxxxxxx
-                          ↑ document_id
+                          ↑ document_id（doxcnxxxxxx 需要替换为实际 URL 中的值）
 
 https://xxx.feishu.cn/wiki/wikicnxxxxxx
                           ↑ 不是 document_id，需要额外 API 获取
