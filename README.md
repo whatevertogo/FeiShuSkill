@@ -1,0 +1,2 @@
+# FeiShuSkill
+一个飞书的skill，需要手动添加到claude skill文件夹中，或者自己添加到codex里面，或者cursor，trae让ai读取这个skill使用
