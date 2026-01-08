@@ -317,7 +317,7 @@ params:
 
 ```
 任务进度：
-- [ ] 步骤1: 创建群组
+- [ ] 步骤1: 创建群组（指定用户为群主）
 - [ ] 步骤2: 获取 chat_id
 - [ ] 步骤3: 发送欢迎消息
 ```
@@ -329,9 +329,11 @@ params:
 工具: mcp__lark-mcp__im_v1_chat_create
 data:
   name: "新项目组"
+  owner_id: "ou_xxxxx"  # ⭐ 指定用户为群主（重要）当前为占位符你需要替换成实际用户ID
   user_id_list: ["ou_xxxxx", "ou_yyyyy"]
 params:
   user_id_type: "open_id"
+useUAT: true  # 使用用户身份
 
 # 步骤2: 从响应获取 chat_id
 # 响应示例: {"chat_id": "oc_xxxxx"}
@@ -339,7 +341,7 @@ params:
 # 步骤3: 发送欢迎消息
 工具: mcp__lark-mcp__im_v1_message_create
 data:
-  receive_id: "oc_xxxxx"
+  receive_id: "oc_xxxxx" 
   msg_type: "post"
   content: '{
     "post": {

@@ -201,14 +201,6 @@ useUAT: true  # ⭐ 重要：使用用户身份，确保您可以直接访问
 
 **步骤2: 创建表格和字段**
 ```yaml
-工具: mcp__lark-mcp__bitable_v1_app_create
-data:
-  name: "应用名称"
-  folder_token: ""  # 留空表示根目录
-```
-
-**步骤2: 创建表格**
-```yaml
 工具: mcp__lark-mcp__bitable_v1_appTable_create
 path:
   app_token: "从步骤1获取"
@@ -229,17 +221,29 @@ data:
             - name: "已完成"
 ```
 
+**注意：** 创建成功后，响应中会返回 `table_id`，保存它用于下一步。
+
 **步骤3: 插入记录**
 ```yaml
 工具: mcp__lark-mcp__bitable_v1_appTableRecord_create
 path:
-  app_token: "xxx"
-  table_id: "xxx"
+  app_token: "xxx"  # 步骤1获取
+  table_id: "xxx"   # 步骤2获取
 data:
   fields:
     姓名: "张三"
     年龄: 25
     状态: "进行中"
+```
+
+**步骤4: 验证数据**
+```yaml
+工具: mcp__lark-mcp__bitable_v1_appTableRecord_search
+path:
+  app_token: "xxx"
+  table_id: "xxx"
+params:
+  page_size: 10
 ```
 
 ### 工作流2：查询表格并发送消息
@@ -267,6 +271,31 @@ data:
       - field_name: "状态"
         operator: "is"
         value: ["待处理"]
+```
+
+**步骤2: 处理查询结果**
+
+查询成功后，响应中包含 `data.items` 数组，每项包含记录的 `fields`。
+
+```yaml
+# 响应结构示例
+data:
+  items:
+    - record_id: "recxxxx"
+      fields:
+        任务名称: "完成文档"
+        状态: "待处理"
+```
+
+**步骤3: 构造消息**
+
+根据查询结果构造消息内容：
+
+```yaml
+# 示例：构造文本消息
+message = "找到 " + items.length + " 个待处理任务：\n"
+for each item in items:
+  message += "- " + item.fields["任务名称"] + "\n"
 ```
 
 **步骤4: 发送消息**
@@ -297,6 +326,19 @@ data:
   search_key: "项目报告"
   count: 10
 useUAT: true
+```
+
+**步骤2: 获取 document_id**
+
+搜索成功后，从响应中提取第一个文档的 `document_id`：
+
+```yaml
+# 响应结构示例
+data:
+  items:
+    - document_id: "doxcnxxxxxx"  # ← 保存这个
+      title: "项目报告"
+      ...
 ```
 
 **步骤3: 获取内容**

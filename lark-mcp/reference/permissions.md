@@ -337,6 +337,7 @@ data:
   markdown: "# 项目文档"
 
 # 步骤2: 从响应获取 document_id
+# 响应示例: {"document_id": "doxcnxxxxxx", ...}
 
 # 步骤3: 添加群组权限
 工具: mcp__lark-mcp__drive_v1_permissionMember_create
