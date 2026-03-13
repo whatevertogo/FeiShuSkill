@@ -1,0 +1,45 @@
+{
+  "name": "lark-mcp",
+  "version": "1.0.0",
+  "description": "集成飞书/Feishu 服务，操作多维表格、文档、消息、群组等",
+  "author": "whatevertogo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whatevertogo/FeiShuSkill"
+  },
+  "skills": [
+    "SKILL.md"
+  ],
+  "mcpServers": {
+    "lark-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@larksuiteoapi/lark-mcp",
+        "mcp",
+        "-a",
+        "<your_app_id>",
+        "-s",
+        "<your_app_secret>",
+        "--oauth"
+      ]
+    }
+  },
+  "envHints": {
+    "your_app_id": {
+      "description": "飞书应用 ID",
+      "url": "https://open.feishu.cn/app"
+    },
+    "your_app_secret": {
+      "description": "飞书应用密钥",
+      "url": "https://open.feishu.cn/app",
+      "secret": true
+    }
+  },
+  "installNotes": [
+    "安装后请将 <your_app_id> 替换为飞书应用 ID",
+    "安装后请将 <your_app_secret> 替换为飞书应用密钥",
+    "获取凭证请访问：https://open.feishu.cn/app",
+    "详细配置指南：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/mcp_installation"
+  ]
+}
